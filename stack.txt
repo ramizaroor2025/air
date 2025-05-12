@@ -1,0 +1,16 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+int main() {
+std::stack<int> mystack;
+for (int i = 0 ; i <5; i++)
+mystack.push(i);
+std::cout<<"Popping out element\n";
+while (!mystack.empty())
+{
+    std::cout << ' ' <<mystack.top() << endl;
+    mystack.pop();
+}
+
+    return 0;
+}
