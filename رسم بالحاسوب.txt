@@ -1,0 +1,98 @@
+1. رسم خط بين نقطتين
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\Turboc3\\BGI");
+
+    line(100, 100, 300, 300); // (x1,y1,x2,y2)
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+
+
+2. رسم مستطيل ودائرة داخله
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\Turboc3\\BGI");
+
+    rectangle(100, 100, 300, 200); // (left,top,right,bottom)
+    circle(200, 150, 40); // (center_x, center_y, radius)
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+
+تلوين شكل باستخدام floodfill
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\Turboc3\\BGI");
+
+    setcolor(WHITE);
+    rectangle(100, 100, 300, 200);
+
+    setfillstyle(SOLID_FILL, RED);
+    floodfill(150, 150, WHITE);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+رسم علم بسيط
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\Turboc3\\BGI");
+
+    // المستطيل الخارجي
+    setcolor(WHITE);
+    rectangle(100, 100, 300, 200);
+
+    // لون أخضر
+    setfillstyle(SOLID_FILL, GREEN);
+    floodfill(150, 150, WHITE);
+
+    getch();
+    closegraph();
+    return 0;
+}
+
+
+رسم دائرة تتحرك (Animation)
+
+#include <graphics.h>
+#include <conio.h>
+
+int main() {
+    int gd = DETECT, gm, i;
+    initgraph(&gd, &gm, "C:\\Turboc3\\BGI");
+
+    for(i = 50; i < 500; i += 5) {
+        cleardevice();
+        circle(i, 200, 30);
+        delay(50);
+    }
+
+    getch();
+    closegraph();
+    return 0;
+}
